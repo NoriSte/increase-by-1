@@ -1,6 +1,6 @@
 
 module.exports = array => {
-  if(!array || !array.length || isNaN(array[0])) {
+  if(!array || !array.length || isNaN(parseInt(array[0]))) {
     return;
   }
 
