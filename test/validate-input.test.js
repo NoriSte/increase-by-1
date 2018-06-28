@@ -6,6 +6,7 @@
 //
 
 // The module 'assert' provides assertion methods from node
+const assert = require('assert');
 const chai = require('chai')
   , spies = require('chai-spies');
 chai.use(spies);
@@ -23,17 +24,22 @@ const constants = require('./../src/constants');
 suite("validate-input tests", function() {
     test("No opened editor", function() {
         const fakeVSCode = {window: {showInformationMessage: chai.spy()}};
-        subject(fakeVSCode);
+        assert.equal(subject(fakeVSCode), false);
         expect(fakeVSCode.window.showInformationMessage).to.have.been.called.with(constants.NO_EDITOR);
     });
     test("Selections must be at least two", function() {
         const fakeVSCode = {window: {activeTextEditor: {selections: [{}]}, showInformationMessage: chai.spy()}};
-        subject(fakeVSCode);
+        assert.equal(subject(fakeVSCode), false);
         expect(fakeVSCode.window.showInformationMessage).to.have.been.called.with(constants.NOT_ENOUGH_SELECTIONS);
     });
     test("The first selection isn't a number", function() {
         const fakeVSCode = {window: {activeTextEditor: {selections: [{}, {}], document: {getText: el => el}}, showInformationMessage: chai.spy()}};
-        subject(fakeVSCode);
+        assert.equal(subject(fakeVSCode), false);
         expect(fakeVSCode.window.showInformationMessage).to.have.been.called.with(constants.NOT_FIRST_SELECTION_NUMBER);
+    });
+    test("Else the user won't be notified", function() {
+        const fakeVSCode = {window: {activeTextEditor: {selections: ['1', '2'], document: {getText: el => el}}, showInformationMessage: chai.spy()}};
+        assert.equal(subject(fakeVSCode), true);
+        expect(fakeVSCode.window.showInformationMessage).to.not.have.been.called();
     });
 });
