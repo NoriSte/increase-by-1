@@ -1,5 +1,9 @@
 
 module.exports = array => {
+  if(!array || !array.length || isNaN(array[0])) {
+    return;
+  }
+
   let result = [];
   let start = parseInt(array[0]);
   result.push(start);
