@@ -9,14 +9,7 @@ const main = vscode => {
     const editor = vscode.window.activeTextEditor;
     const selections = editor.selections;
     const selectedTexts = selections.map(selection => editor.document.getText(selection));
-
-    let newTexts;
-
-    if(!isNaN(parseInt(selectedTexts[0]))) {
-        newTexts = incrementIntegers(selectedTexts);
-    } else {
-        vscode.window.showInformationMessage(`The first selection must be a number`);
-    }
+    const newTexts = incrementIntegers(selectedTexts);
 
     if(newTexts && newTexts.length > 0 && newTexts.length === selectedTexts.length) {
         editor.edit(builder => {

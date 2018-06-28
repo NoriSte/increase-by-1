@@ -11,5 +11,10 @@ module.exports = (vscode) => {
         return false;
     }
 
+    if(isNaN(parseInt(editor.document.getText(selections[0])))) {
+        vscode.window.showInformationMessage(`The first selection must be a number`);
+        return false;
+    }
+
     return true;
 };
