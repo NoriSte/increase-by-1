@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
+const extension = require('./src/index.js');
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -15,30 +16,8 @@ function activate(context) {
     // The commandId parameter must match the command field in package.json
     let disposable = vscode.commands.registerCommand('extension.increaseByOne', function () {
         // The code you place here will be executed every time your command is executed
-
-        var editor = vscode.window.activeTextEditor;
-        if (!editor) {
-            vscode.window.showInformationMessage(`There isn't any opened editor`);
-            return; // No open text editor
-        }
-
-        var selections = editor.selections;
-        var selectedTexts = selections.map(selection => editor.document.getText(selection));
-        console.log(selectedTexts);
-        var replacedTexts;
-        if(selectedTexts && selectedTexts.length) {
-            if(!isNaN(parseInt(selectedTexts[0]))) {
-                replacedTexts = incrementIntegers(selectedTexts);
-            }
-        }
-        console.log(replacedTexts);
-        if(replacedTexts && replacedTexts.length === selectedTexts.length) {
-            editor.edit(builder => {
-                selections.forEach((selection, i) => {
-                    builder.replace(selection, replacedTexts[i].toString());
-                });
-            });
-        }
+        console.log(extension);
+        extension(vscode);
     });
 
     context.subscriptions.push(disposable);
@@ -49,14 +28,3 @@ exports.activate = activate;
 function deactivate() {
 }
 exports.deactivate = deactivate;
-
-
-function incrementIntegers(list) {
-    var result = [];
-    var start = parseInt(list[0]);
-    result.push(start);
-    for(var i = 1, n = list.length; i < n; i++) {
-        result.push(start + i);
-    }
-    return result;
-}
