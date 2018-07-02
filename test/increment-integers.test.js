@@ -35,11 +35,13 @@ suite("increment-integers tests", function() {
         assert.deepEqual(subject([1, 2, 4]), [1, 2, 3]);
         assert.deepEqual(subject([1, 100, 100]), [1, 2, 3]);
         assert.deepEqual(subject([9, 9, 9]), [9, 10, 11]);
-        assert.deepEqual(subject([9, '9', 9]), [9, 10, 11]);
-        assert.deepEqual(subject([9, {}, []]), [9, 10, 11]);
-        assert.deepEqual(subject([9, null, undefined]), [9, 10, 11]);
         assert.deepEqual(subject([100, 100, 100]), [100, 101, 102]);
         assert.deepEqual(subject([-5, 0, 0]), [-5, -4, -3]);
         assert.deepEqual(subject([-1, 0, 0]), [-1, 0, 1]);
+    });
+    test("Only the first selection must be a number, the others will be replaced without any checks", function() {
+        assert.deepEqual(subject([9, '9', 9]), [9, 10, 11]);
+        assert.deepEqual(subject([9, {}, []]), [9, 10, 11]);
+        assert.deepEqual(subject([9, null, undefined]), [9, 10, 11]);
     });
 });
