@@ -20,6 +20,14 @@
                 "command": "increaseByOne.integers",
                 "title": "Increase By One"
             }
+        ],
+        "keybindings": [
+            {
+                "command": "increaseByOne.integers",
+                "key": "ctrl+shift+i",
+                "mac": "cmd+shift+i",
+                "when": "editorTextFocus"
+            }
         ]
     },
     "scripts": {
