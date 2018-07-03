@@ -27,6 +27,11 @@ suite("validate-input tests", function() {
         assert.equal(subject(fakeVSCode), false);
         expect(fakeVSCode.window.showInformationMessage).to.have.been.called.with(constants.NO_EDITOR);
     });
+    test("No selections", function() {
+        const fakeVSCode = {window: {activeTextEditor: {selections: undefined}, showInformationMessage: chai.spy()}};
+        assert.equal(subject(fakeVSCode), false);
+        expect(fakeVSCode.window.showInformationMessage).to.have.been.called.with(constants.NO_SELECTIONS);
+    });
     test("Selections must be at least two", function() {
         const fakeVSCode = {window: {activeTextEditor: {selections: [{}]}, showInformationMessage: chai.spy()}};
         assert.equal(subject(fakeVSCode), false);

@@ -8,7 +8,13 @@ module.exports = (vscode) => {
     }
 
     const selections = editor.selections;
-    if(selections.length < 2) {
+
+    if(!selections) {
+        vscode.window.showInformationMessage(constants.NO_SELECTIONS);
+        return false;
+    }
+
+    if(!selections.length || selections.length < 2) {
         vscode.window.showInformationMessage(constants.NOT_ENOUGH_SELECTIONS);
         return false;
     }
