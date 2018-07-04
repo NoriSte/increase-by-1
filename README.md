@@ -12,6 +12,11 @@ Auto-increments by one the current selections starting from the first seleted nu
 
 * **increaseByOne.integers**: cmd+shift+i (ctrl+shift+i on other systems)
 
+# Notes
+
+Why have I developed this extension?
+Because I really missed the "count by one" feature of [this extension](https://github.com/colinta/SublimeCalculate "SublimeCalculate") for Sublime Text
+
 # Participate
 
 If you have any idea, feel free to create issues and pull requests
