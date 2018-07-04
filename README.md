@@ -6,7 +6,7 @@ Auto-increments by one the current selections starting from the first seleted nu
 
 * **Increase By One**: if the first of your selections is a number, the following selections will be replaced with a sequence that starts from the first number.
 
-\!\[increase a set of selections\]\(images/demo-1-integers.jpg\)
+![](images/demo-1-integers.jpg?raw=true)
 
 ## Commands and default shortcuts
 

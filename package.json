@@ -4,6 +4,7 @@
     "description": "Increase the selected numbers (or letters) by one",
     "version": "1.0.0",
     "publisher": "noriste",
+    "repository": "https://github.com/NoriSte/increase-by-1",
     "license": "SEE LICENSE IN LICENSE",
     "engines": {
         "vscode": "^1.24.0"
