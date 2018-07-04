@@ -2,7 +2,7 @@
     "name": "increase-by-1",
     "displayName": "Increase by 1",
     "description": "Increase the selected numbers (or letters) by one",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "noriste",
     "repository": "https://github.com/NoriSte/increase-by-1",
     "license": "SEE LICENSE IN LICENSE",
