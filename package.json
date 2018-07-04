@@ -2,7 +2,7 @@
     "name": "increase-by-1",
     "displayName": "Increase by 1",
     "description": "Increase the selected numbers (or letters) by one",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "noriste",
     "engines": {
         "vscode": "^1.24.0"
@@ -14,6 +14,17 @@
         "onCommand:increaseByOne.integers"
     ],
     "main": "./extension",
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "color": "#000000",
+        "theme": "dark"
+    },
+    "keywords": [
+        "increment",
+        "increase",
+        "count",
+        "series"
+    ],
     "contributes": {
         "commands": [
             {
