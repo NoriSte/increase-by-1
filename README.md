@@ -1,6 +1,6 @@
 # increase-by-1 README
 
-Auto-increments by one the current selections starting from the first seleted numberp.
+Auto-increments by one the current selections starting from the first seleted number.
 
 ## Features
 
@@ -15,11 +15,11 @@ Auto-increments by one the current selections starting from the first seleted nu
 # Notes
 
 Why have I developed this extension?
-Because I really missed the "count by one" feature of [this extension](https://github.com/colinta/SublimeCalculate "SublimeCalculate") for Sublime Text
+Because I really missed the "count by one" feature of [this extension](https://github.com/colinta/SublimeCalculate "SublimeCalculate") for Sublime Text.
 
 # Participate
 
-If you have any idea, feel free to create issues and pull requests
+If you have any idea, feel free to create issues and pull requests.
 
 # License
 
