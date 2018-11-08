@@ -1,4 +1,4 @@
-# increase-by-1 README
+# increase-by-1
 
 Auto-increments by one the current selections starting from the first seleted number.
 
